@@ -48,7 +48,7 @@ module.exports = defineConfig({
   reporterOptions: {
     "overwrite": false,
     charts: true,
-    reportPageTitle: 'Final tryout',
+    reportPageTitle: 'saucedemo.com website testing using Cypress and Cucumber framework',
     embeddedScreenshots: true, 
     inlineAssets: true
   },
