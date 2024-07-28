@@ -7,6 +7,7 @@ const {
 async function setupNodeEvents(on, config) {
   // This is required for the preprocessor to be able to generate JSON reports after each run, and more,
   await addCucumberPreprocessorPlugin(on, config);
+  require('cypress-mochawesome-reporter/plugin')(on);
 
   on(
     "file:preprocessor",
@@ -37,6 +38,20 @@ async function setupNodeEvents(on, config) {
 }
 
 module.exports = defineConfig({
+  // reporter: 'mochawesome',
+  // reporterOptions: {
+  //   "overwrite": false,
+  //   "html": false,
+  //   "json": true
+  // },
+  reporter: 'cypress-mochawesome-reporter',
+  reporterOptions: {
+    "overwrite": false,
+    charts: true,
+    reportPageTitle: 'Final tryout',
+    embeddedScreenshots: true, 
+    inlineAssets: true
+  },
   e2e: {
     baseUrl: "http://www.saucedemo.com/",
     specPattern: "**/*.feature",
