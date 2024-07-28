@@ -23,7 +23,7 @@ jobs:
       steps:
         - name: Checkout
           uses: actions/checkout@v4                
-        - name: Create and clean gh-pages branch (optional)
+        - name: Create and clean gh-pages branch
           continue-on-error: true
           run: |
             git checkout --orphan gh-pages
